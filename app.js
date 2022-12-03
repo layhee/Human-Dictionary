@@ -3,7 +3,7 @@
 // constant and variables
 
 const promise =  $.ajax({
-  url: "https://www.dictionaryapi.com/api/v3/references/collegiate/json/amalgamation?key=12da27b6-953a-4c4f-9273-78ace33cdddd",
+  url: "https://www.dictionaryapi.com/api/v3/references/collegiate/json/inure?key=12da27b6-953a-4c4f-9273-78ace33cdddd",
 })
 
 // cache DOM elements
