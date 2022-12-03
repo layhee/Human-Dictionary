@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+}
+h1{
+  margin: 36px 24px;  
+}
+h2{
+  font-size: 2.4rem;
+  font-style: italic;
+  text-align: center;
+  margin: 32px 12px;
+}
+#guess-box input{
+  margin: 18px 12px;
+  padding: 12px 12px;
+  border: 0;
+  border-radius: 4px;
+}
+.container {
+  font-family: 'Fragment Mono', monospace;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 0.7fr 1.5fr 1.3fr 0.5fr;
+  gap: 8px 0px;
+  grid-auto-flow: column;
+  justify-content: center;
+  align-content: center;
+  /* justify-items: stretch; */
+  /* align-items: center; */
+  grid-template-areas:
+      ". header ."
+      ". def-div ."
+      ". ans-div ."
+      ". footer .";
+  width: 100vw;
+  height: 100vh;
+}
+  
+.header { grid-area: header; }
+
+.def-div { grid-area: def-div; }
+
+.ans-div { grid-area: ans-div; }
+
+.footer { grid-area: footer; }
+    
+.header {
+  display: flex;
+  background-color: rgb(251, 212, 17);
+  grid-column-start: 2;
+  justify-content: center;
+}
+   
+.def-div {
+  display: flex;
+  background-color: rgb(84, 237, 251);
+  flex-direction: column;
+  align-items: center;
+}
+  
+.footer {
+  background-color: rgb(244, 83, 24);
+  /* grid-column-start: 2; */
+  align-self: end;
+}
