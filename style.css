@@ -5,9 +5,12 @@ h1{
   margin: 36px 24px;  
 }
 h2{
-  font-size: 2.4rem;
-  font-style: italic;
   text-align: center;
+  margin: 32px 12px;
+}
+h3{
+  font-size: 1.6rem;
+  font-style: italic;
   margin: 32px 12px;
 }
 #guess-box input{
@@ -49,6 +52,7 @@ h2{
   background-color: rgb(251, 212, 17);
   grid-column-start: 2;
   justify-content: center;
+  align-items: center;
 }
    
 .def-div {
@@ -57,9 +61,20 @@ h2{
   flex-direction: column;
   align-items: center;
 }
-  
+.ans-div{
+  color: rgb(255,255,255);
+  background-color: rgb(23,23,23);
+  padding: 6px 12px;
+  font-size: 1.2rem;
+}
 .footer {
   background-color: rgb(244, 83, 24);
   /* grid-column-start: 2; */
   align-self: end;
+}
+
+@media screen (max-width: 1190px) {
+  .container{
+    display: flex;
+  }
 }
