@@ -2,7 +2,8 @@
     margin: 0;
 }
 h1{
-  margin: 36px 24px;  
+  margin: 36px 20px 36px 24px;
+  line-height: 1.8rem;
 }
 h2{
   text-align: center;
@@ -11,18 +12,41 @@ h2{
 h3{
   font-size: 1.6rem;
   font-style: italic;
-  margin: 32px 12px;
+  margin: 32px 12px 12px 12px;
 }
+p{
+  margin: 16px 24px;
+}
+/* form{
+  align-items: center;
+  justify-content: center;
+} */
 #guess-box input{
   margin: 18px 12px;
   padding: 12px 12px;
   border: 0;
   border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+}
+#guess-box input:hover{
+  background-color: rgb(45,45,45);
+  color: rgb(255,255,255)
+}
+#new-word{
+  margin: 18px 12px;
+  padding: 12px 12px;
+  border: 0;
+  border-radius: 4px;
+}
+#new-word:hover{
+  background-color: rgb(45,45,45);
+  color: rgb(255,255,255)
 }
 .container {
   font-family: 'Fragment Mono', monospace;
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 5% 90% 5%;
   grid-template-rows: 0.7fr 1.5fr 1.3fr 0.5fr;
   gap: 8px 0px;
   grid-auto-flow: column;
@@ -45,7 +69,7 @@ h3{
 
 .ans-div { grid-area: ans-div; }
 
-.footer { grid-area: footer; }
+/* .footer { grid-area: footer; } */
     
 .header {
   display: flex;
@@ -53,8 +77,14 @@ h3{
   grid-column-start: 2;
   justify-content: center;
   align-items: center;
+  position: sticky;
+  top: 0;
 }
-   
+.game-rules{
+  align-items: center;
+  justify-content: center;
+}
+
 .def-div {
   display: flex;
   background-color: rgb(84, 237, 251);
@@ -64,17 +94,38 @@ h3{
 .ans-div{
   color: rgb(255,255,255);
   background-color: rgb(23,23,23);
+  margin: 6px 12px;
   padding: 6px 12px;
   font-size: 1.2rem;
+  display: flex;
 }
 .footer {
+  display: flex;
   background-color: rgb(244, 83, 24);
-  /* grid-column-start: 2; */
-  align-self: end;
+  grid-column-start: 2;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 @media screen (max-width: 1190px) {
   .container{
-    display: flex;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 0.7fr 1.5fr 1.3fr 0.5fr;
+    gap: 8px 0px;
+    grid-auto-flow: column;
+    justify-content: center;
+    align-content: center;
+    /* justify-items: stretch; */
+    /* align-items: center; */
+    grid-template-areas:
+        ". header ."
+        ". def-div ."
+        ". ans-div ."
+        ". footer .";
+    width: 100vw;
+    height: 100vh;
+}
+
   }
 }
