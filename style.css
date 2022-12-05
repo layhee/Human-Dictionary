@@ -1,6 +1,22 @@
 *{
     margin: 0;
 }
+html{
+  /* background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 20px,
+    rgb(222, 222, 222) 2px,
+    rgb(222, 222, 222) 4px
+  ); */
+  /* with multiple color stop lengths */
+  height: 100vh;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent 0 6px,
+    rgb(241, 241, 241) 6px 12px
+  );
+}
 h1{
   margin: 36px 20px 36px 24px;
   line-height: 1.8rem;
@@ -8,19 +24,16 @@ h1{
 h2{
   text-align: center;
   margin: 32px 12px;
+  font-size: 1.4rem;
 }
 h3{
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   font-style: italic;
   margin: 32px 12px 12px 12px;
 }
 p{
   margin: 16px 24px;
 }
-/* form{
-  align-items: center;
-  justify-content: center;
-} */
 #guess-box input{
   margin: 18px 12px;
   padding: 12px 12px;
@@ -28,39 +41,60 @@ p{
   border-radius: 4px;
   align-items: center;
   justify-content: center;
+  font-family: 'Fragment Mono', monospace;
 }
-#guess-box input:hover{
+#guess-box input[type=text]{
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #999;
+  color: #555;
+  box-sizing: border-box;
+  text-align: center;
+  text-transform:uppercase;
+  font-style: italic;
+  font-size: 1.2rem;
+  height: 50px;
+  /* margin: -25px 0 0 -100px; */
+  padding: 10px 0px;
+  position: relative;
+  /* top: 50%; */
+}
+input[type=submit]{
+  box-shadow: 2px 2px 4px rgba(45,45,45,.2);
+}
+input[type=submit]:hover{
   background-color: rgb(45,45,45);
-  color: rgb(255,255,255)
+  color: rgb(255,255,255);
 }
 #new-word{
   margin: 18px 12px;
   padding: 12px 12px;
   border: 0;
   border-radius: 4px;
+  box-shadow: 2px 2px 4px rgba(45,45,45,.8);
+  font-family: 'Fragment Mono', monospace;
 }
 #new-word:hover{
   background-color: rgb(45,45,45);
-  color: rgb(255,255,255)
+  color: rgb(255,255,255);
+  box-shadow: 2px 2px 4px rgba(45,45,45,.8);
 }
 .container {
   font-family: 'Fragment Mono', monospace;
   display: grid;
-  grid-template-columns: 5% 90% 5%;
+  grid-template-columns: 10% 80% 10%;
   grid-template-rows: 0.7fr 1.5fr 1.3fr 0.5fr;
   gap: 8px 0px;
   grid-auto-flow: column;
   justify-content: center;
   align-content: center;
-  /* justify-items: stretch; */
-  /* align-items: center; */
   grid-template-areas:
       ". header ."
       ". def-div ."
       ". ans-div ."
       ". footer .";
   width: 100vw;
-  height: 100vh;
+  /* height: 100vh; */
 }
   
 .header { grid-area: header; }
@@ -68,49 +102,59 @@ p{
 .def-div { grid-area: def-div; }
 
 .ans-div { grid-area: ans-div; }
-
-/* .footer { grid-area: footer; } */
     
 .header {
   display: flex;
-  background-color: rgb(251, 212, 17);
+  background-color: rgb(250, 213, 6);
   grid-column-start: 2;
   justify-content: center;
   align-items: center;
   position: sticky;
   top: 0;
+  padding-bottom: 16px;
+  border: dashed 4px rgb(45,45,45);
+  border-radius: 12px;
 }
 .game-rules{
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 24px;
+  max-width: 666px;
 }
 
 .def-div {
   display: flex;
-  background-color: rgb(84, 237, 251);
+  /* background-color: rgb(84, 237, 251); */
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  margin 0 18px;
+  /* background: linear-gradient(-120deg, #e55c1df1, #e1c210, #eda703); */
+  animation: gradient 15s ease infinite;
+  border-radius: 66px;
 }
 .ans-div{
-  color: rgb(255,255,255);
-  background-color: rgb(23,23,23);
-  margin: 6px 12px;
-  padding: 6px 12px;
+  color: rgb(46,46,46);
+  margin: 16px 16px;
+  /* padding: 6px 12px; */
   font-size: 1.2rem;
   display: flex;
 }
 .footer {
   display: flex;
-  background-color: rgb(244, 83, 24);
+  /* background-color: rgb(244, 83, 24); */
   grid-column-start: 2;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
 }
-
-@media screen (max-width: 1190px) {
+.word-display{
+  max-width: 820px;
+}
+@media (max-width: 880px) {
   .container{
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: 0.7fr 1.5fr 1.3fr 0.5fr;
     gap: 8px 0px;
     grid-auto-flow: column;
@@ -128,4 +172,30 @@ p{
 }
 
   }
-}
+  @media (max-width: 666px) {
+    .header{
+      flex-wrap: wrap;
+      flex-direction: column-reverse;
+    }
+    h1{
+      margin: 36px 20px 36px 24px;
+      line-height: 1.8rem;
+      display: flex;
+    }
+    form{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  

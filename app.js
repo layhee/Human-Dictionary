@@ -6,6 +6,7 @@
 // constant and variables
 ////////////////////////
 
+//wrapped api call and word display into a button click
 $('#new-word').click(function(){
     let randomPull
     const $wordDisplay = $('.word-display');
@@ -33,11 +34,9 @@ $('#new-word').click(function(){
     //register event listeners
     ////////////////////////
 
-
     ////////////////////////
     // FUNCTIONS
     ////////////////////////
-
     //this calls in a random word from frist API and plugs it into
     //second API to pull its' definition and part of speech. 
     $.ajax(random).then(function (randomResponse) {
@@ -55,7 +54,7 @@ $('#new-word').click(function(){
                 }
         )
     }); 
-
+    
     // display randomly generated definition and part of speech
     function displayWord(newWord){
         const htmlPos = newWord.map(function(word) {
@@ -64,12 +63,12 @@ $('#new-word').click(function(){
         const htmlWord = newWord.map(function(word) {
             return `${word.shortdef}`
         })
-        $partOfSpeech.html(htmlPos)
+        $partOfSpeech.html('part of speech: ' + htmlPos)
         $wordDisplay.html(htmlWord)
     }
 
     //when form button is pushed, this gets user's guess (input)
-    //and tells you if you're right or if you're wrong, it tells you
+    //and tells you if you're right or if you're wrong
     //and displays your guess below the form.
     $form.on('submit', handleGetData)
 
@@ -78,12 +77,7 @@ $('#new-word').click(function(){
         if(userInput === '') return;
         $input.val('')   
         event.preventDefault();
-        // return ($input === userInput ? $ansDiv.html(userInput + ' is the right answer!') : $ansDiv.html(userInput + ' is the wrong answer'))
-        if ($input == $wordDisplay){
-            $ansDiv.html(userInput + ' is the right answer!')
-        }else{
-            $ansDiv.append(userInput + ' is the wrong answer')
-        }
+        return ($input === $wordDisplay ? $ansDiv.html(userInput + ' is the right answer!') :  $ansDiv.html('<span style="padding: 12px 12px; background-color: #454545; color: #fff; border-radius:8px;">' + userInput + ' is the wrong answer</span>'))
     }
 
     handleGetData();
