@@ -24,7 +24,8 @@ A game that provides you with a definition, and you have to guess the word given
 
 ## Future Enhancements
 
-- # Giving second letter after 3 incorrect attempts, then 3 more guesses
+- Listing incorrect attempts so you don't guess twice.
+- Giving second letter after 3 incorrect attempts, then 3 more guesses
 
 # Human-Dictionary
 

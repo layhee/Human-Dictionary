@@ -14,12 +14,13 @@ html{
   background-image: repeating-linear-gradient(
     0deg,
     transparent 0 6px,
-    rgb(241, 241, 241) 6px 12px
+    rgb(250, 250, 250) 6px 12px
   );
 }
 h1{
   margin: 36px 20px 36px 24px;
-  line-height: 1.8rem;
+  line-height: 2.2rem;
+  font-size: 2.4rem;
 }
 h2{
   text-align: center;
@@ -44,7 +45,6 @@ p{
   font-family: 'Fragment Mono', monospace;
 }
 #guess-box input[type=text]{
-  background-color: transparent;
   border: none;
   border-bottom: 2px solid #999;
   color: #555;
@@ -112,8 +112,9 @@ input[type=submit]:hover{
   position: sticky;
   top: 0;
   padding-bottom: 16px;
-  border: dashed 4px rgb(45,45,45);
-  border-radius: 12px;
+  /* border: dashed 4px rgb(45,45,45); */
+  box-shadow: 1px 2px 3px rgba(46,46,46, .4);
+  border-radius: 0 0 12px 12px;
 }
 .game-rules{
   display: flex;
@@ -167,19 +168,40 @@ input[type=submit]:hover{
         ". def-div ."
         ". ans-div ."
         ". footer .";
-    width: 100vw;
-    height: 100vh;
+    /* width: 100vw;
+    height: 100vh; */
 }
-
-  }
+    .header{
+      flex-wrap: wrap;
+      border-radius: 0px;
+    }
+    h1{
+      margin: 16px 8px;
+      line-height: 2rem;
+      font-size: 2.2rem;
+      display: flex;
+    }
+    .game-rules{
+      margin-top: 0;
+    }
+}
   @media (max-width: 666px) {
     .header{
       flex-wrap: wrap;
-      flex-direction: column-reverse;
+      border-radius: 0px;
+    }
+    .game-rules{
+      position: relative;
+      /* top: 240px; */
+      margin-top: 0;
+    }
+    p{
+      margin: 0 18px;
     }
     h1{
-      margin: 36px 20px 36px 24px;
-      line-height: 1.8rem;
+      margin: 12px 8px;
+      line-height: 1.6rem;
+      font-size: 1.8rem;
       display: flex;
     }
     form{

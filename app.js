@@ -63,8 +63,8 @@ $('#new-word').click(function(){
         const htmlWord = newWord.map(function(word) {
             return `${word.shortdef}`
         })
-        $partOfSpeech.html('part of speech: ' + htmlPos)
-        $wordDisplay.html(htmlWord)
+        $partOfSpeech.html('<span style="color:#464646;font-size:1.2rem;">part of speech:</span> <span style="padding: 12px 12px; background-color: #454545; color: #fff; border-radius:8px;">' + htmlPos)
+        $wordDisplay.html('<span style="font-style:italic;color:#464646;font-size:1.2rem;">definition: </span>' + htmlWord)
     }
 
     //when form button is pushed, this gets user's guess (input)
@@ -77,7 +77,7 @@ $('#new-word').click(function(){
         if(userInput === '') return;
         $input.val('')   
         event.preventDefault();
-        return ($input === $wordDisplay ? $ansDiv.html(userInput + ' is the right answer!') :  $ansDiv.html('<span style="padding: 12px 12px; background-color: #454545; color: #fff; border-radius:8px;">' + userInput + ' is the wrong answer</span>'))
+        return (userInput == randomPull ? $ansDiv.html('<span style="padding: 16px 24px; background-color: rgb(250, 213, 6); color: #464646; border-radius:8px;text-transform:uppercase;">' + randomPull + ' is the right answer!</span>') :  $ansDiv.html('<span style="padding: 12px 12px; background-color: #454545; color: #fff; border-radius:8px;">' + userInput + ' is the wrong answer</span>'))
     }
 
     handleGetData();
