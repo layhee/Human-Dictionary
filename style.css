@@ -189,17 +189,21 @@ input[type=submit]:hover{
     .header{
       flex-wrap: wrap;
       border-radius: 0px;
+      max-height: 320px;
     }
     .game-rules{
       position: relative;
       /* top: 240px; */
       margin-top: 0;
     }
+    #new-word{
+      margin: 4px 4px;
+    }
     p{
-      margin: 0 18px;
+      margin: 4px 18px;
     }
     h1{
-      margin: 12px 8px;
+      margin: 16px 8px;
       line-height: 1.6rem;
       font-size: 1.8rem;
       display: flex;
@@ -209,15 +213,3 @@ input[type=submit]:hover{
       flex-direction: column;
     }
   }
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-  
