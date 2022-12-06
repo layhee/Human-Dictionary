@@ -11,6 +11,8 @@ A game that provides you with a definition, and you have to guess the word given
 - JavaScript/jQuery
 - Git/Github
 - Netflify
+- Google Fonts
+- DNS configuration
 
 ## Screenshots
 
@@ -20,12 +22,13 @@ A game that provides you with a definition, and you have to guess the word given
 
 ## Getting Started
 
-[Click here](#) to visit deployed app!
+[Click here](http://dev.lehi.work) to visit deployed app!
 
 ## Future Enhancements
 
 - Listing incorrect attempts so you don't guess twice.
 - Giving second letter after 3 incorrect attempts, then 3 more guesses
+- Add 'Give Up' button which reveals word if you'r tired of guessing and just want to know!
 
 # Human-Dictionary
 
