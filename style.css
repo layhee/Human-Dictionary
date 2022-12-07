@@ -1,15 +1,8 @@
 *{
     margin: 0;
+    box-sizing: border-box;
 }
 html{
-  /* background-image: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 20px,
-    rgb(222, 222, 222) 2px,
-    rgb(222, 222, 222) 4px
-  ); */
-  /* with multiple color stop lengths */
   height: 100vh;
   background-image: repeating-linear-gradient(
     0deg,
@@ -29,8 +22,13 @@ h2{
 }
 h3{
   font-size: 1.2rem;
-  font-style: italic;
+  /* font-style: italic; */
   margin: 32px 12px 12px 12px;
+}
+h4{
+  font-size: 1.2rem;
+  color:#000;
+  text-align: center;
 }
 p{
   margin: 16px 24px;
@@ -43,6 +41,7 @@ p{
   align-items: center;
   justify-content: center;
   font-family: 'Fragment Mono', monospace;
+  z-index: 0;
 }
 #guess-box input[type=text]{
   border: none;
@@ -50,14 +49,12 @@ p{
   color: #555;
   box-sizing: border-box;
   text-align: center;
-  text-transform:uppercase;
+  text-transform:capitalize;
   font-style: italic;
   font-size: 1.2rem;
   height: 50px;
-  /* margin: -25px 0 0 -100px; */
   padding: 10px 0px;
   position: relative;
-  /* top: 50%; */
 }
 input[type=submit]{
   box-shadow: 2px 2px 4px rgba(45,45,45,.2);
@@ -94,7 +91,6 @@ input[type=submit]:hover{
       ". ans-div ."
       ". footer .";
   width: 100vw;
-  /* height: 100vh; */
 }
   
 .header { grid-area: header; }
@@ -105,16 +101,17 @@ input[type=submit]:hover{
     
 .header {
   display: flex;
-  background-color: rgb(250, 213, 6);
+  background-color: #ffc21c;
   grid-column-start: 2;
   justify-content: center;
   align-items: center;
   position: sticky;
   top: 0;
   padding-bottom: 16px;
-  /* border: dashed 4px rgb(45,45,45); */
   box-shadow: 1px 2px 3px rgba(46,46,46, .4);
   border-radius: 0 0 12px 12px;
+  max-height: 180px;
+  z-index: 1;
 }
 .game-rules{
   display: flex;
@@ -127,25 +124,20 @@ input[type=submit]:hover{
 
 .def-div {
   display: flex;
-  /* background-color: rgb(84, 237, 251); */
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin 0 18px;
-  /* background: linear-gradient(-120deg, #e55c1df1, #e1c210, #eda703); */
-  animation: gradient 15s ease infinite;
-  border-radius: 66px;
+  margin: 0 18px;
+  max-height: 100vh;
 }
 .ans-div{
   color: rgb(46,46,46);
   margin: 16px 16px;
-  /* padding: 6px 12px; */
   font-size: 1.2rem;
   display: flex;
 }
 .footer {
   display: flex;
-  /* background-color: rgb(244, 83, 24); */
   grid-column-start: 2;
   align-items: center;
   flex-direction: column;
@@ -161,19 +153,17 @@ input[type=submit]:hover{
     grid-auto-flow: column;
     justify-content: center;
     align-content: center;
-    /* justify-items: stretch; */
-    /* align-items: center; */
     grid-template-areas:
         ". header ."
         ". def-div ."
         ". ans-div ."
         ". footer .";
-    /* width: 100vw;
-    height: 100vh; */
 }
     .header{
       flex-wrap: wrap;
       border-radius: 0px;
+      block-size: 240px;
+      max-height: 320px;
     }
     h1{
       margin: 16px 8px;
@@ -193,17 +183,19 @@ input[type=submit]:hover{
     }
     .game-rules{
       position: relative;
-      /* top: 240px; */
       margin-top: 0;
     }
+    .pos{
+      align-items: flex-start;
+    }
     #new-word{
-      margin: 16px 4px 12px 4px;
+      margin: 4px 4px 12px 4px;
     }
     p{
-      margin: 12px 18px;
+      margin: 6px 18px;
     }
     h1{
-      margin: 16px 8px;
+      margin: 26px 8px;
       line-height: 1.6rem;
       font-size: 1.8rem;
       display: flex;

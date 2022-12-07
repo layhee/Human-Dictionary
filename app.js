@@ -9,14 +9,15 @@
 //wrapped api call and word display into a button click
 $('#new-word').click(function(){
     let randomPull
-    const $wordDisplay = $('.word-display');
-    const $partOfSpeech = $('.pos');
-    const $ansDiv = $('.ans-div');
-    const $form = $('form')
-    const $input = $( 'input[type="text"]' )
+    let $wordDisplay = $('.word-display');
+    let $partOfSpeech = $('.pos');
+    let $ansDiv = $('.ans-div');
+    let $form = $('form')
+    let $input = $( 'input[type="text"]' )
+    let $etymology = $('.etymology')
 
     //rapid api call for random word
-    const random = {
+    let random = {
         "async": true,
         "crossDomain": true,
         "url": "https://random-words5.p.rapidapi.com/getRandom",
@@ -57,16 +58,26 @@ $('#new-word').click(function(){
     
     // display randomly generated definition and part of speech
     function displayWord(newWord){
-        const htmlPos = newWord.map(function(word) {
+        let htmlPos = newWord.map(function(word) {
             return `${word.fl}`
         })[0]
-        const htmlWord = newWord.map(function(word) {
+        let htmlWord = newWord.map(function(word) {
             return `${word.shortdef}`
         })
-        $partOfSpeech.html('<span style="color:#464646;font-size:1.2rem;line-height:72px;">part of speech:</span> <span style="padding: 12px 12px; background-color: #454545; color: #fff; border-radius:8px;">' + htmlPos)
+        let htmlEtymology = newWord.map(function(word) {
+            return `${word.et}`
+        })[0]
+        $partOfSpeech.html('<span style="color:#464646;font-size:1.2rem;line-height:72px;font-style:italic;">part of speech: </span> <span style="padding: 12px 12px; background-color: #454545; color: #fff; border-radius:8px;">' + htmlPos)
         $wordDisplay.html('<span style="font-style:italic;color:#464646;font-size:1.2rem;">definition: </span>' + htmlWord)
+        $etymology.html('<span style="color:#464646;font-size:1.2rem;font-style:italic;">etymology: </span>' + htmlEtymology)
     }
-
+    // function hint(newWord){
+    //     let htmlEtymology = newWord.map(function(word) {
+    //         return `${word.et}`
+    //     })[0]
+    //     $etymology.html('<div id="etymology">' + htmlEtymology + '</div>')
+    // }
+    // hint()
     //when form button is pushed, this gets user's guess (input)
     //and tells you if you're right or if you're wrong
     //and displays your guess below the form.
@@ -78,7 +89,7 @@ $('#new-word').click(function(){
         $input.val('')   
         event.preventDefault();
         console.log(userInput);
-        return (userInput === randomPull ? $ansDiv.html('<div style="display:flex;flex-direction:column;align-items:center;">Nice!<span style="padding: 16px 24px;margin: 6px 0;background-color: rgb(250, 213, 6); color: #464646; border-radius:8px;text-transform:uppercase;">' + randomPull + ' is the right answer!</span><a onClick="window.location.reload()">Click here to start fresh!</a></div>') :  $ansDiv.html('<span style="padding: 12px 12px; background-color: #454545; color: #fff; border-radius:8px;">' + userInput + ' is the wrong answer</span>'))
+        return (userInput === randomPull ? $ansDiv.html('<div style="display:flex;flex-direction:column;align-items:center;">Nice!<span style="padding: 16px 24px;margin: 6px 0;background-color:#ffc21c; color: #464646; border-radius:8px;text-transform:uppercase;">' + randomPull + ' is the right answer!</span><a onClick="window.location.reload();">Click here to start over!</a></div>') :  $ansDiv.html('<span style="padding: 12px 12px; background-color: #454545; color: #fff; border-radius:8px;">' + userInput + ' is the wrong answer</span>'))
     }
 
     handleGetData($ansDiv.html(''));

@@ -16,9 +16,11 @@ A game that provides you with a definition, and you have to guess the word given
 
 ## Screenshots
 
-![wireframe]()
+![final](http://dev.lehi.work/screen.png)
 
-![produciton version]()
+## Wireframe
+
+![wireframe](http://dev.lehi.work/wireframe.png)
 
 ## Getting Started
 
