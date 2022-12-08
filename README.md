@@ -31,7 +31,3 @@ A game that provides you with a definition, and you have to guess the word given
 - Listing incorrect attempts so you don't guess twice.
 - Giving second letter after 3 incorrect attempts, then 3 more guesses
 - Add 'Give Up' button which reveals word if you'r tired of guessing and just want to know!
-
-# Human-Dictionary
-
-first project for General Assembly boot camp
