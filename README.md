@@ -20,7 +20,7 @@ A game that provides you with a definition, and you have to guess the word given
 
 ## Wireframe
 
-![wireframe](http://dev.lehi.work/wireframe.png)
+![wireframe](http://dev.lehi.work/wire-frame.png)
 
 ## Getting Started
 
